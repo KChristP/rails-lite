@@ -61,5 +61,8 @@ class ControllerBase
 
   # use this with the router to call action_name (:index, :show, :create...)
   def invoke_action(name)
+    self.send(name)#this cant be right... why not just send the method from the router directly?
+#how can I check if something was rendered?
+    render(name)
   end
 end
